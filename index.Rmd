@@ -155,7 +155,8 @@ This can be found under the **Data>Video Games** folders. Or follow the link [Vi
 ## Day 2 {.tabset .tabset-pills}
 
 Rstudio installation quiz set 
-Link to quiz [here](https://qprop.shinyapps.io/instructor_exam/)
+Link to quiz [here](https://qprop.shinyapps.io/instructor_exam/) or see below
+
 
 
 ## Day 3 {.tabset .tabset-pills}
