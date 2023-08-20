@@ -27,29 +27,37 @@ This week we are doing exercise, and focus of exercise will be on the three soft
 2. R
 3. PowerBi
 
+### Data can be fun | Visualization and story telling
+```{r echo=FALSE, warning=TRUE}
+knitr::include_url("https://www.gapminder.org/tools/#$chart-type=bubbles&url=v1")
+
+```
+
+
+
 
 ### 1. MS Excel
 
-General use and understanding of Microsoft excel. Maneouvering through workbooks, sheets and formulas.
+  General use and understanding of Microsoft excel. Maneouvering through workbooks, sheets and formulas.
 
-Intertwined understanding of how formulas work with sheets across workbooks.
+  Intertwined understanding of how formulas work with sheets across workbooks.
 
 ### 2. R Software
 
-Statistical software used for analysis.
+  Statistical software used for analysis.
 
-Work around understanding of what R Software is and familirazation to the IDE RStudio
+  Work around understanding of what R Software is and familirazation to the IDE RStudio
 
 
 ### 3. PowerBI
 
-Software tool used for visualization and story telling.
+  Software tool used for visualization and story telling.
 
-Creation of dashboards that are feed directly from raw data format.
+  Creation of dashboards that are fed directly from raw data format.
 
-Introduction of the interface, use of visuals and how to change functions.
+  Introduction of the interface, use of visuals and how to change functions.
 
-Understanding of how to manipulate data on the data structure end.
+  Understanding of how to manipulate data on the data structure end.
 
 
 ### Overview of our knowledge
@@ -67,7 +75,9 @@ Understanding of how to manipulate data on the data structure end.
 * Mixed instructional guide, with the presentation but focused on getting more hard skills
 * Engagements and practice on the fly
 
+### Datasets
 
+Link to all the datasets we will be using [here](https://github.com/Qprop/DataManagementExercises/tree/master/Data) . Will be accessing my github account for the data
 
 ## Day 1 {.tabset}
 
@@ -75,7 +85,7 @@ Understanding of how to manipulate data on the data structure end.
 
 We will be using excel for this exercises, we have data from 2009 to 2019 of the english premier league
 
-You can find the dataset in the data folder then folder named **English Premier League_09_19** [source of data](https://datahub.io/sports-data/english-premier-league#resource-english-premier-league_zip). 
+You can find the dataset in the **Data>English Premier League_09_19** folder [source of data](https://datahub.io/sports-data/english-premier-league#resource-english-premier-league_zip). Or follow the link [PremierLeague](https://github.com/Qprop/DataManagementExercises/tree/master/Data/English%20Premier%20League_09_19) 
 
 #### Task
 
@@ -99,7 +109,7 @@ You can find the dataset in the data folder then folder named **English Premier 
 ### Collage Majors Dataset
 
 Dataset is about college majors across different universities and major/course they undertook. 
-This can be found under the **Data>College Majors** folders.
+This can be found under the **Data>College Majors** folders. Or follow the link [MajorCollege](https://github.com/Qprop/DataManagementExercises/tree/master/Data/College%20Majors) 
 
 #### Task
 
@@ -127,7 +137,7 @@ This can be found under the **Data>College Majors** folders.
 
 Dataset contains video games sold across the world for a number of years.
 
-This can be found under the **Data>Video Games** folders.
+This can be found under the **Data>Video Games** folders. Or follow the link [VideoGame](https://github.com/Qprop/DataManagementExercises/tree/master/Data/Video%20Games)
 
 #### Tasks
 
