@@ -157,6 +157,81 @@ This can be found under the **Data>Video Games** folders. Or follow the link [Vi
 Rstudio installation quiz set 
 Link to quiz [here](https://qprop.shinyapps.io/instructor_exam/) or see below
 
+We are going to use the day's before datasets but instead of using Excel, we will now use R.
+
+
+
+### English Premier League Data
+
+We will be using R for this exercises, we have data from 2009 to 2019 of the english premier league
+
+You can find the dataset in the **Data>English Premier League_09_19** folder [source of data](https://datahub.io/sports-data/english-premier-league#resource-english-premier-league_zip). Or follow the link [PremierLeague](https://github.com/Qprop/DataManagementExercises/tree/master/Data/English%20Premier%20League_09_19) 
+
+#### Task
+
+1. Merge all the datasets into 1 workbook with one sheet having data from 2009 to 2019, named "merged sheet"
+2. Ensure the data structure columns align
+3. Below analysis
+  - How many games did each team play away and home for the 10 seasons
+  - How many referees have been there for the 10 Seasons
+  - Who officiated the highest number of games as a referee
+  - What is the total games won in the 10 season for the teams and how many lost games for the 10 seasons
+  - Which team has the highest goals under the three categories total goals, home games and away games
+
+
+**Hint**
+
+- FTHG (Final Time Home Game)
+- FTAG (Final Time Away Game)
+- FTR (Final Time Rate: A (Away won), H (Home Won))
+
+
+### Collage Majors Dataset
+
+Dataset is about college majors across different universities and major/course they undertook. 
+This can be found under the **Data>College Majors** folders. Or follow the link [MajorCollege](https://github.com/Qprop/DataManagementExercises/tree/master/Data/College%20Majors) 
+
+#### Task
+
+1. Give resulst of the general statistics of the below information
+  - How many schools in the dataset
+  - Number of years the dataset spans across
+  - Gender of students across different Schools across the different years
+  - Top 10 majors
+  - Average tuition per major per school
+  - Average debt per major per school
+  
+2. Unemployment index based of number of student graduates .i.e. % of students who are unemployed
+  - crosstab by School
+  - Crosstab by Year
+  - Crosstab by Gender
+  - Crosstab with all the three
+  
+3. Do a regression analysis of whether tution fee, debt and graduate numbers impact unemployment.
+  - Experiment using other variables/columns
+  
+4. Write down simple summary of the information.
+
+
+### Video Game Dataset
+
+Dataset contains video games sold across the world for a number of years.
+
+This can be found under the **Data>Video Games** folders. Or follow the link [VideoGame](https://github.com/Qprop/DataManagementExercises/tree/master/Data/Video%20Games)
+
+#### Tasks
+
+1. Give resulst of the general statistics of the below information
+  - How many platforms in the dataset
+  - Year with the highest number of games
+  - Which is the highest game in global sales
+  - Which region accounts for the highest number of sales year on year
+  
+2. Which genre of games has the highest sales overall, what is the year trend of sales for each genre
+
+3. Which publisher has the highest number of games
+q   
+
 
 
 ## Day 3 {.tabset .tabset-pills}
