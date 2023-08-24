@@ -230,11 +230,47 @@ This can be found under the **Data>Video Games** folders. Or follow the link [Vi
 2. Which genre of games has the highest sales overall, what is the year trend of sales for each genre
 
 3. Which publisher has the highest number of games
-q   
+   
 
 
 
 ## Day 3 {.tabset .tabset-pills}
+
+Using Inventory data to create a dashboard of our own choice look and feel.
+
+Datasets **Data>inventory_powerbi** two files:
+
+1. categories.csv
+2. warm_data.xlsx
+
+### Task 1
+
+1. Prepare clean and explore the dataset to see what it contains using a mix of excel and power query
+
+2. What does the categories data contain
+
+3. What does the warm_data contain
+
+### Task 2
+
+Some of the analysis to be done and not limited to this only, you can pick what is flexible for your case
+
+1. Revenue `Revenue = Quantity of units sold * selling price`
+2. Cost of Goods Sold (COGS) `production costs of the goods`
+3. Profit `Profit = COGS - Revenue`
+
+Data structure
+
+![](Images/Dataset table details.png)
+
+
+Data Table Defintion
+
+![](Images/Table_Definitions.png)
+
+Ensure that data is clean and free from duplicates.
+
+
 
 
 
