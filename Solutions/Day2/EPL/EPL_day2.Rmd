@@ -1,0 +1,173 @@
+---
+title: "Day2_EPL"
+author: "Bravo Kilo"
+date: "2023-08-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Day 2 English Premiere League Dataset
+
+## Loading Libraries
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+
+library("dplyr")
+library("tidyr")
+library("readr")
+library("purrr")
+#library("kable")
+
+```
+
+## Read the files in the data directory
+
+```{r}
+
+ssn1 <- read.csv("../../../Data/English Premier League_09_19/ssn-0910_csv.csv")
+ssn2 <- read.csv("../../../Data/English Premier League_09_19/ssn-1011_csv.csv")
+ssn3 <- read.csv("../../../Data/English Premier League_09_19/ssn-1112_csv.csv")
+ssn4 <- read.csv("../../../Data/English Premier League_09_19/ssn-1213_csv.csv")
+ssn5 <- read.csv("../../../Data/English Premier League_09_19/ssn-1314_csv.csv")
+ssn6 <- read.csv("../../../Data/English Premier League_09_19/ssn-1415_csv.csv")
+ssn7 <- read.csv("../../../Data/English Premier League_09_19/ssn-1516_csv.csv")
+ssn8 <- read.csv("../../../Data/English Premier League_09_19/ssn-1617_csv.csv")
+ssn9 <- read.csv("../../../Data/English Premier League_09_19/ssn-1718_csv.csv")
+ssn10 <- read.csv("../../../Data/English Premier League_09_19/ssn-1819_csv.csv")
+
+ssn1 %>% 
+  head() %>% 
+  knitr::kable()
+
+```
+
+## Merging the datasets
+
+```{r}
+
+epl <- merge(ssn1, ssn2, all = TRUE)
+epl <- merge(epl, ssn3, all = TRUE)
+epl <- merge(epl, ssn4, all = TRUE)
+epl <- merge(epl, ssn5, all = TRUE)
+epl <- merge(epl, ssn6, all = TRUE)
+epl <- merge(epl, ssn7, all = TRUE)
+epl <- merge(epl, ssn8, all = TRUE)
+epl <- merge(epl, ssn9, all = TRUE)
+epl <- merge(epl, ssn10, all = TRUE)
+
+dim(epl)
+
+```
+
+
+## option 2 merge
+
+```{r}
+
+epl1 <- bind_rows(
+  ssn1
+,ssn2
+,ssn3
+,ssn4
+,ssn5
+,ssn6
+,ssn7
+,ssn8
+,ssn9
+,ssn10
+)
+
+dim(epl)
+
+```
+
+## Option 3
+
+```{r}
+
+epl2 <- list.files("../../../Data/English Premier League_09_19/", 
+           full.names = TRUE, pattern = "*.csv") %>% 
+  set_names() %>% 
+  map_dfr(~read.csv(.), .id = "Source")
+
+dim(epl2)
+
+```
+
+The number of games played at home for arsenal `r 2+3`
+
+The number of games played at home by Arsenal `r sum(epl2$HomeTeam == "Arsenal")` and away games were `r sum(epl2$AwayTeam == "Arsenal")`. 
+
+The total number of games played by Arsenal `r sum(epl2$HomeTeam == "Arsenal") + sum(epl2$AwayTeam == "Arsenal")`
+
+
+Which team had the highest number of home goals?
+
+```{r echo=FALSE}
+HighestFTHG <-  epl2 %>% 
+  group_by(HomeTeam) %>% 
+  summarise("SumofHomeGoals" = sum(FTHG)) %>% 
+  arrange(desc(SumofHomeGoals))
+```
+
+
+The team is `r HighestFTHG$HomeTeam[1]`
+
+
+
+### Which team has the highest goals under the three categories total goals, home games and away games
+
+
+```{r}
+
+epl2_reduced <- epl2 %>% 
+  select(Source, Date, HomeTeam, AwayTeam,
+         FTHG, FTAG, FTR)
+
+dim(epl2_reduced)
+
+
+```
+#### Change the data from wide to long format
+
+```{r}
+
+epl2_reduced_long <- epl2_reduced %>% 
+  pivot_longer(cols = c("HomeTeam", "AwayTeam"),
+               names_to = "Home_Away", values_to = "Team")
+
+```
+
+```{r}
+
+epl2_reduced_long <- epl2_reduced_long %>% 
+  mutate(FT = if_else(Home_Away == "HomeTeam", FTHG, FTAG))
+
+
+```
+
+```{r}
+epl2_reduced_long_sum <- epl2_reduced_long %>% 
+  select(Home_Away, Team, FT) %>% 
+  group_by(Home_Away, Team) %>% 
+  mutate("SumOfGoals" = sum(FT)) %>% 
+  ungroup() %>% 
+  select(-FT) %>% 
+  distinct()
+
+View(epl2_reduced_long_sum)
+
+```
+
+```{r}
+
+epl2_reduced_long_sum_t <- epl2_reduced_long_sum %>% 
+  pivot_wider(names_from = "Home_Away", values_from = "SumOfGoals")
+
+View(epl2_reduced_long_sum_t)
+
+```
+

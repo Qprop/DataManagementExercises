@@ -1,7 +1,7 @@
 ---
-title: "Data Management Training Exercises"
+title: ""
 author: "Brian K"
-date: "2023-07-25"
+date: ""
 output:
   rmarkdown::html_document:
   theme: cosmo
@@ -271,11 +271,43 @@ Data Table Defintion
 Ensure that data is clean and free from duplicates.
 
 
+### Task 3
 
+Inventory Control and Management
+
+1. Average Inventory Value `(starting value + Ending value)/2`
+
+2. Inventory Turnover `COGS/ Average Inventory Value`
+
+3. *ABC Analysis  (Optional and needs to be researched) ![](Images/ABC_analysis.png)
+
+
+Create a new page named "Sales by Year" and visualize;
+  - The total quantity of orders by year.
+  - The descending rank with the percentages of the top sold products for the the top selling year only
+
+
+
+**HINT** All sample results done in the solutions folder
 
 
 ## Day 4 {.tabset .tabset-pills}
 
+Continuation of PowerBI exercises and solutions.
+
+
+Using the English Premier League data create your own dashboard in any way you would want it to look like.
 
 
 ## Day 5 {.tabset .tabset-pills}
+
+
+Wrapping up and consolidating what we have learnt and the exercise we have done thus far.
+
+We have noticed the interchange and use of excel, R and Power BI.
+Each has its own advantage over the other as well as disadvantages.
+
+
+*It is all a matter of exercising and practicing, creating your mental memory*
+
+**Finally Q & A**
