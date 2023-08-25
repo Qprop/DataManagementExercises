@@ -19,7 +19,7 @@ library("dplyr")
 library("tidyr")
 library("readr")
 library("purrr")
-#library("kable")
+library("DT")
 
 ```
 
@@ -127,7 +127,7 @@ epl2_reduced <- epl2 %>%
   select(Source, Date, HomeTeam, AwayTeam,
          FTHG, FTAG, FTR)
 
-dim(epl2_reduced)
+datatable(epl2_reduced)
 
 
 ```
@@ -138,6 +138,8 @@ dim(epl2_reduced)
 epl2_reduced_long <- epl2_reduced %>% 
   pivot_longer(cols = c("HomeTeam", "AwayTeam"),
                names_to = "Home_Away", values_to = "Team")
+
+dim(epl2_reduced_long)
 
 ```
 
@@ -158,7 +160,7 @@ epl2_reduced_long_sum <- epl2_reduced_long %>%
   select(-FT) %>% 
   distinct()
 
-View(epl2_reduced_long_sum)
+datatable(epl2_reduced_long_sum)
 
 ```
 
@@ -167,7 +169,8 @@ View(epl2_reduced_long_sum)
 epl2_reduced_long_sum_t <- epl2_reduced_long_sum %>% 
   pivot_wider(names_from = "Home_Away", values_from = "SumOfGoals")
 
-View(epl2_reduced_long_sum_t)
+datatable(epl2_reduced_long_sum_t,
+   filter = "top")
 
 ```
 
